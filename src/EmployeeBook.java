@@ -41,7 +41,7 @@ public class EmployeeBook {
     private int salarySum() {
         int salarySum = 0;
         for (int i = 0; i < employees.length; i++) {
-            Employee employee = null;
+            Employee employee = employees[i];
             if (employee != null) {
                 employee = employees[i];
                 salarySum += employee.getSalary();
@@ -124,7 +124,6 @@ public class EmployeeBook {
         int count = 0;
         for (int i = 0; i < employees.length; i++) {
             Employee employee = employees[i];
-
             if (employee != null) {
                 if (employee.getDepartment() == deptNo) {
                     sortedDept[count] = employee;

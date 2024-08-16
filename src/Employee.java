@@ -28,6 +28,19 @@ public class Employee {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return department == employee.department && salary == employee.salary && id == employee.id && Objects.equals(employeeFullName, employee.employeeFullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeFullName, department, salary, id);
+    }
+
     public void setSalary(int salary) {
         this.salary = salary;
     }
